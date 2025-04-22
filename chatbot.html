@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot page</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="chatstyle.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-left">
+        <span style="font-weight: 700; font-size: 20px; color: #3a90eb;">FinancePilot</span>
+      <a href="home.html">Home</a>
+      <a href="chatbot.html" class="active">Chatbot</a>
+      <a href="expenses.html">Expenses</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <button id="logout-btn">Logout</button>
+  </nav>
+
+  <!-- Chat Interface -->
+  <div class="chat-container">
+    <div class="chatbox" id="chatbox">
+      <div class="message bot-message">Hi, I am the Official Chatbot of FinancePilot!</div>
+    </div>
+    <div class="input-container">
+      <input type="text" id="user-input" placeholder="Type your message...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <!-- Firebase Logout Script -->
+  <script type="module">
+    import { auth } from './firebase.js';
+    import { signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+    const logoutBtn = document.getElementById('logout-btn');
+    logoutBtn.addEventListener('click', async () => {
+      try {
+        await signOut(auth);
+        window.location.href = 'index.html'; // Redirect after logout
+      } catch (error) {
+        console.error("Logout failed:", error.message);
+      }
+    });
+  </script>
+
+  <script type="module" src="chatbot.js"></script>
+</body>
+</html>

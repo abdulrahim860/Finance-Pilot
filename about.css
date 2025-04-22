@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&family=Montserrat:wght@400&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif; /* Use Poppins for consistency */
+  height: 100vh;
+  background: url('Buymate.jpg') no-repeat center center/cover;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px; /* Ensure space for the navbar */
+}
+
+/* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Adds a blur effect */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px; /* More padding for better spacing */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Subtle bottom border */
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  box-sizing: border-box; /* Ensure navbar content stays within the screen */
+}
+
+/* Navigation Links */
+.nav-left {
+  display: flex;
+  gap: 20px; /* More space between links */
+  align-items: center;
+}
+
+.nav-left a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 15px; /* Increased padding for a larger clickable area */
+  font-size: 18px;
+  font-weight: 500; /* Slightly heavier font weight */
+  transition: background 0.3s, color 0.3s;
+  border-radius: 8px; /* Rounded corners for links */
+}
+
+.nav-left a:hover,
+.nav-left .active {
+  background: rgba(0, 0, 0, 0.1);
+  color: #5190d3; /* Button color from chatbot */
+}
+
+/* Logout Button */
+#logout-btn {
+  background: rgb(204, 80, 80);
+  color: white;
+  padding: 8px 16px; /* Increased padding */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+  margin-left: auto; /* Ensures logout button stays on the far right */
+  max-width: 120px; /* Prevents the logout button from going too wide */
+  box-sizing: border-box; /* Prevents overflow */
+}
+
+#logout-btn:hover {
+  background: rgb(127, 53, 53);
+}
+
+/* About Us Section */
+.about-section {
+  margin-top: 120px; /* Adjust for navbar */
+  padding: 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin-left: 50px;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card Styling */
+.card {
+  background: rgba(0, 0, 0, 0); /* Light black border */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.097); /* Soft shadow */
+  text-align: left;
+  width: 100%;
+}
+
+.card h2 {
+  font-size: 24px;
+  font-family: 'Oswald', sans-serif;
+  color: rgb(49, 45, 45);
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(61, 59, 59);
+  line-height: 1.5;
+}
+
+/* Framework Links Styling */
+.about-container ul li a {
+    
+  color: #3a90eb; /* You can change this to any color you prefer */
+  text-decoration: none; /* Removes the underline */
+  transition: color 0.3s; /* Smooth transition effect */
+}
+
+.about-container ul li a:hover {
+  color: #2963a1; /* Darker color on hover */
+}
+
+/* Logo */
+.logo {
+  height: 45px;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}

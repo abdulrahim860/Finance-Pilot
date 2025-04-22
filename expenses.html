@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker</title>
+    <link rel="stylesheet" href="expenses.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+        <span style="font-weight: 700; font-size: 20px; color: #3a90eb;">FinancePilot</span>
+      <a href="home.html">Home</a>
+      <a href="chatbot.html">Chatbot</a>
+      <a href="expenses.html" class="active">Expenses</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <button id="logout-btn">Logout</button>
+  </nav>
+
+  <!-- Main Content -->
+  <section style="padding: 80px 60px; text-align: left; font-family: 'Poppins', sans-serif;">
+    <div class="container">
+        <h1>Finance Tracker</h1>
+
+        <!-- Manual Input Section -->
+        <div class="input-section">
+            <div class="manual-input-section">
+                <h2>Enter Balance</h2>
+                <input type="number" id="balanceInput" placeholder="Enter Initial Balance">
+                <button id="setBalanceBtn">Set Balance</button>
+
+                <h2>Type Your Expenses</h2>
+                <input type="text" id="expenseName" placeholder="Expense Name">
+                <input type="number" id="expenseAmount" placeholder="Amount">
+                <button id="addExpenseBtn">Add Expense</button>
+            </div>
+        </div>
+
+        <!-- Expense Summary Section -->
+        <div class="summary-section">
+            <h2>Expense Summary</h2>
+            <p id="currentBalance">Current Balance: $0</p>
+            <p id="totalExpenses">Total Expenses: $0</p>
+            <p id="overspendStatus">Status: You're within budget!</p>
+            <p id="savingsTip">Tip: Save more on dining!</p>
+        </div>
+
+        <!-- Query Section -->
+        <div class="query-section">
+            <h2>Ask a Query</h2>
+            <div class="query-row">
+                <input type="text" id="queryInput" placeholder="Ask about your expenses...">
+                <button id="askQueryBtn">Ask</button>
+            </div>
+            <p id="queryResult"></p>
+        </div>
+
+  <script type="module">
+    import { auth } from './firebase.js';
+    import { signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+    const logoutBtn = document.getElementById('logout-btn');
+    logoutBtn.addEventListener('click', async () => {
+      try {
+        await signOut(auth);
+        window.location.href = 'index.html';
+      } catch (error) {
+        console.error("Logout failed:", error.message);
+      }
+    });
+  </script>
+
+  <script src="expenses.js"></script>
+</body>
+</html>

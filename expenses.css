@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    background-image: url('buymate.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 70px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.nav-left {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-left a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-left a:hover,
+.nav-left .active {
+    background: rgba(0, 0, 0, 0.1);
+    color: #5190d3;
+}
+
+#logout-btn {
+    background: rgb(204, 80, 80);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#logout-btn:hover {
+    background: rgb(127, 53, 53);
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.input-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.manual-input-section {
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+input[type="text"], input[type="number"] {
+    width: 95%;
+    padding: 14px;
+    font-size: 16px;
+    margin: 12px auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    display: block;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #3a90eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2963a1;
+}
+
+.summary-section, .query-section {
+    margin-top: 30px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 800px;
+}
+
+.summary-section p, .query-section p {
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.query-section .query-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.query-section input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.query-section button {
+    padding: 12px 20px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .query-section .query-row {
+        flex-direction: column;
+    }
+
+    .query-section input[type="text"],
+    .query-section button {
+        width: 100%;
+    }
+
+    .query-section button {
+        margin-top: 10px;
+    }
+}

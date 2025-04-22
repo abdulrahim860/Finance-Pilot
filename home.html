@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartFinanceBot - Home</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+        <span style="font-weight: 700; font-size: 20px; color: #3a90eb;">FinancePilot</span>
+      <a href="home.html" class="active">Home</a>
+      <a href="chatbot.html">Chatbot</a>
+      <a href="expenses.html">Expenses</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <button id="logout-btn">Logout</button>
+  </nav>
+
+
+<section style="padding: 80px 60px; text-align: left; font-family: 'Poppins', sans-serif;">
+    <h1 style="font-size: 64px; font-weight: 600; margin: 0; color: #11111100;">Empty SPACEEEEEEEEEEEEEEEEEE</h1>
+    <h1 style="font-size: 64px; font-weight: 600; margin: 0; color: #111;">Your Decisions Powered by our Knowledge</h1>
+    <p style="font-size: 24px; color: #555; margin: 16px 0 40px;">
+      an unique website that offers financial advice, built by Ajay and Rahim!
+    </p>
+    <a href="chatbot.html" class="animated-link">
+      Get started <span class="arrow">&gt;</span>
+    </a>
+  </section>
+  
+  
+  
+
+  <!-- Firebase Logout Script -->
+  <script type="module">
+    import { auth } from './firebase.js';
+    import { signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+    const logoutBtn = document.getElementById('logout-btn');
+    logoutBtn.addEventListener('click', async () => {
+      try {
+        await signOut(auth);
+        window.location.href = 'index.html'; // Redirect after logout
+      } catch (error) {
+        console.error("Logout failed:", error.message);
+      }
+    });
+  </script>
+
+</body>
+</html>
